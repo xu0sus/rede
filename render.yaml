@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: khul3awiyah-v171
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /health
+    envVars:
+      - key: RED_TOKEN
+        sync: false
+      - key: RED_OWNER
+        sync: false
+      - key: RED_INSTANCE
+        value: khul3awiyah
+      - key: RED_DATA_DIR
+        value: /data/khul3awiyah
+      - key: RENDER_KEEPALIVE_INTERVAL
+        value: "600"
